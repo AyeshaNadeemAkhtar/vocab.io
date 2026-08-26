@@ -1,0 +1,150 @@
+
+Latest
+
+Skipped the Listening part bcz already listening exercises are in other 
+exercises so what should i add that could be new. 
+
+1: Understand the already present backend, give information to claude,
+delete the previous and make a new backend. 
+And read these points written up.
+How to connect backend with frontend
+API stuff, text input first
+
+Latest
+
+1. Make a vocab.io-backend folder in github - DONE;
+2: put it locally. - DONE;
+3: See Flask together from david malan. 
+
+25th June:
+1: Test out a simple flask application
+2: See docs of working with APIs and models
+3: Whip up models and connect them to text input route.
+
+26th June:
+1: https://code.visualstudio.com/docs/python/tutorial-flask#_create-a-project-environment-for-the-flask-tutorial
+from this link, continue with "Serve Static Files".
+
+27th June:
+1: See a video about push and pull in github.
+2: See how can i share my code with alina and how can she?
+3: Step 1, 2 of 26th June.
+
+28th June:
+1: Fix the error in app.py so that it can work with
+/?name=Usman and don't give internal server error. - DONE
+2: See previous ones of 27th and 26th.
+
+4th July:
+1: "Review the base template" later
+ https://code.visualstudio.com/docs/python/tutorial-flask#_create-a-project-environment-for-the-flask-tutorial
+
+2: Solve signup and login errors
+
+30th July:
+1: Ask Claude which API to use:
+SpaCy, EdenAI,  or some other. 
+
+7th August:
+1: Read from yake documentation
+2: Try to write code
+3: Ask Claude
+
+15th August:
+Keyword extraction from vocab.io - Claude
+Last most question
+1: Install every library. - ✔ (argostranslate is not installed because of heaviness.)
+
+2: User gives text. Clean and validate text.
+
+    16th August 2026:
+    - Test out these errors 
+    Good ones to try, covering different failure modes:
+
+        **Empty / whitespace**
+        ✔ `""` (empty string)
+        ✔ `"   "` (just spaces)
+    
+        **HTML / script injection**
+        ✔ `"<script>alert('xss')</script>"`
+        ✔ `"<img src=x onerror=alert(1)>"`
+        ✔ `"Hello <b>world</b>"`
+
+        **SQL-injection-style**
+        ✔`"'; DROP TABLE users; --"`
+
+        **Very long input**
+        ✔  A 10,000+ character string (if you have a length limit)
+
+        **Wrong type entirely**
+        ✔ Send `"text": 12345` (a number, not a string) — tests if your function assumes `.strip()` or similar string methods exist
+
+        **Special characters / encoding**
+        SKIPPED: `"caf\u00e9 \ud83d\ude00"` (emoji + accented chars) — tests if sanitize breaks on non-ASCII
+         ✔  `"text\x00with\x00null\x00bytes"`
+
+
+
+
+
+
+
+
+
+
+
+
+
+18th August:
+Important: Keyword & Logo
+ ✔: Pull keywords out with YAKE 
+     ✔: Test large text => English, Italian, Finnish, Spanish
+         ✔ Implement the keyword extractor API => AI extraction ->LastMost
+            ✔ Make changes to files app.py, extract.py, llm_extract.py,  by first understanding.
+            ✔ Debug the whole program with short and large text to check that gemini and YAKE
+            works together correctly. => DOes it send the request to LLm 
+            and to check the flow.
+              
+    2: github
+        - Solve your .env issue by following "env conversation" LastMost
+        in claude
+        - Then solve the upstream main issue and login using browser
+        or SSH key or personal token.
+        ✔ Made vocab.io a repository
+        ✔ git add it to it by solving errors
+        - Share with Alina
+    ✔ Decorate Dropdown
+    ✔ Make Dropdown required
+    - Do debugging with the whole like keyword extraction
+        ✔ Review code & remove breakpoints.
+        ✔ Put Breakpoints
+        ✔. Put on Debugger
+    ✔ Check the difference if user gives the dropdown language or not.
+    - Check how effective is it by giving large text in each language
+    one by one. 
+    - Do the spellcheck for the keywords being extracted.
+    - Make the generate button disabled after giving the text to YAKE
+    so the user won't be able to click again.
+    - Make the font-size and look of textarea's text in input page better and 
+    extend the height if necessary.
+    - Make the whole vocab.io folder a git repository and give access to 
+    Alina about it. 
+    - Make logo of vocab.io
+   
+
+
+4: Download specific language models for translation.
+5: Get English Meanings for keywords.
+6: Add imports in "app.py" => Update.
+7: Update "input.jsx"
+8: Test and find errors
+
+Test and find errors after each feature. 
+
+
+
+
+
+
+- Distractions
+> My personal weatherman

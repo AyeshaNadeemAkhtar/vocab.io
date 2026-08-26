@@ -1,0 +1,1173 @@
+/* Global CSS */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Plus Jakarta Sans";
+}
+
+/* Intro Page */
+header.intro-page {
+    background-color: #0099FF;
+    display: flex;
+    padding: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFFFFF;
+}
+
+header h3 {
+    color: #FF4D6D;
+}
+
+header button {
+    padding: 0.5rem 2rem;
+    border-radius: 8px;
+    border: 1px solid #FF4D6D;
+}
+header .signup-button {
+    margin-right: 1rem;
+    background-color: #FF4D6D;
+    color: white;
+}
+
+header .login-button {
+    color: #FF4D6D;
+    background-color: #FFFFFF;
+}
+
+div.hero {
+    background-color: #FFF0f3;
+    min-height: 80vh;
+    display: flex;
+    width: 100%;
+    padding: 4rem 6rem;
+    align-items: center;
+    
+}
+
+.hero .text {
+    flex: 1;
+    color: #1A1A2E;
+    max-width: 500px;
+}
+
+.hero .illustration {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 620px;
+    overflow: hidden;
+
+    
+}
+
+.illustration.hero {
+    height: 100%;
+    width: 100%;
+}
+.hero .text h1 {
+    font-size: 3rem;
+    line-height: 1.1;
+}
+
+.hero .text p {
+    font-size: 1.1rem;
+    opacity: 0.7;
+}
+
+.hero .text button {
+    font-size: 1rem;
+    background-color: #FF4D6D;
+    color: white;
+    padding: 0.75rem 1.8rem;
+    border-radius: 8px;
+    border: 1px solid #FF4D6D;
+}
+
+.hero .text > * {
+    margin-bottom: 1rem;
+}
+
+section.feature {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+section.feature > div {
+    max-width: 450px;
+}
+
+section.feature h2 {
+    margin-bottom: 0.5rem;
+}
+
+.feature {
+    color: #1A1A2E;
+}
+
+.feature p {
+    opacity: 0.7;
+}
+
+.feature-two {
+    background-color: #FFF0F3;
+}
+
+section.skills {
+    background-color: #FFF0F3;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 3rem;
+    height: 70px;
+}
+
+.section-animation {
+    height: 500px;
+    width: 500px;
+}
+
+.skills svg {
+    color: #FF4D6D;
+    height: 32px;
+    width: 32px;
+}
+
+
+.skills > span {
+    color: #1A1A2E;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section.CTA {
+    background-color: #FFF0F3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 6rem;
+}
+
+.CTA h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #FF4D6D;
+    max-width: 19ch;
+    text-align: center;
+}
+
+.CTA button {
+    background-color: #0099ff;
+    color: #fff0f3;
+    border-radius: 8px;
+    padding: 0.75rem 1.8rem;
+    border: none;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+footer {
+    background-color: #0099FF;
+    color: white;
+    padding: 2rem;
+}
+
+/* SignUp page */
+
+div.container {
+    display: flex;
+}
+
+.container .signup-illustration {
+    flex: 1;
+    background-color: #FFF0F3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.signup-illustration .lottie {
+    width: 600px;
+    height: 500px;
+}
+
+.sign-up-form {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+    align-items: stretch;
+    max-width: 450px;
+    padding: 3rem;
+    gap: 1rem;
+    color: #1A1A2E;
+    min-height: 100vh;
+    margin: 0 auto;
+}
+
+.sign-up-form h2 {
+    color: #FF4D6D;
+}
+
+.sign-up-form input, 
+.sign-up-form button {
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    outline: none;
+    border: 1px solid #e0e0e0;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.sign-up-form label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-align: left;
+}
+
+.sign-up-form button {
+    background-color: #FF4D6D;
+    color: white;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 0.5rem;
+}
+
+.sign-up-form button:hover {
+    background-color: #FFF0F3;
+    color: #FF4D6D;
+}
+
+.sign-up-form input:focus {
+    border-color: #FF4D6D;
+    
+}
+
+.sign-up-form input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+    -webkit-text-fill-color: #1A1A2E;
+} 
+
+.sign-up-form p span {
+    color: #FF4D6D;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.sign-up-form .continue-with-google {
+    background-color: #FFFFFF;
+    color: #1A1A2E;
+    border: 1px solid #ff4d6d;
+}
+
+/* Reason page encompassing reason.jsx & multiselect.jsx */
+
+.reason-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.multiselect-container {
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+}
+
+.multiselect-title {
+    font-size: 2rem;
+    color: #1A1A2E;
+    margin-bottom: 0.5rem;
+}
+
+.multiselect-subtitle {
+    opacity: 0.7;
+    margin-bottom: 2rem;
+}
+
+.multiselect-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.multiselect-option-button {
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid #0e0e0e;
+    background: #FFFFFF;
+    color: #1A1A2E;
+    font-size: 1.25rem;
+    font-weight: 600;
+    font-family: "Plus Jakarta Sans";
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.multiselect-option-button svg {
+    width: 32px;
+    height: 32px;
+    color: #1A1A2E;
+}
+
+.multiselect-option-button.selected svg {
+    color: #0099FF;
+}
+
+.multiselect-option-button.selected { /* An option which has "multiselect-option" & "selected" classes both" */
+    background-color: #FFF0F3;
+    color: #ff4d6d;
+    border: 2px solid #ff4d6d;
+}
+
+.continue-btn {
+    background-color: #FF4D6D;
+    color: white;
+    padding: 0.75rem 3rem;
+    border-radius: 8px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: "Plus Jakarta Sans";
+}
+
+/* Dashboard */
+.dashboard {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #FFF0F3;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.sidebar h3 {
+    color: #FF4D6D;
+}
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar nav a {
+    color: #1A1a2E;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.sidebar nav a:hover {
+    color: #FF4D6D;
+}
+
+.main {
+    flex: 1;
+    padding: 2rem;
+    background-color: #FFFFFF;
+    
+}
+
+
+.welcome-card {
+    background-color: #FFF0F3;
+    border-radius: 16px;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.welcome-text .greeting {
+    color: #1A1A2E;
+    opacity: 0.7;
+    margin-bottom: 0.25rem;
+}
+
+.welcome-text h2 {
+    color: #ff4d6d;
+    font-size: 1.8rem;
+    margin-bottom: 0.75rem;
+}
+
+.welcome-text .subtext {
+    color: #1a1a2e;
+    opacity: 0.7;
+    max-width: 35ch;
+}
+
+/* Other sidebar */
+.progress-sidebar {
+    width: 220px;
+    background-color: #FF6D4d;
+}
+
+.language-card {
+    display: flex;
+    gap: 1rem;
+    color: white;
+}
+.language-card > div {
+    background-color: #0099FF;
+    display: flex;
+    gap: 1.5rem;
+    border-radius: 8px;
+    padding: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.language-card h3 {
+    margin-bottom: 0.8rem;
+}
+
+/* Input Page */
+.input-panel {
+    display: flex;
+    min-height: 100vh;
+}
+
+.input-main {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.input-main .language-dropdown {
+    padding: 10px 14px;
+    font-size: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    color: #333;
+    transition: border-color 0.15s ease;
+    cursor: pointer;
+    outline: none;
+}
+
+.input-main .language-dropdown:hover {
+    border-color: #FF4D6D;
+}
+
+.input-main .language-dropdown:focus {
+    border-color: #FF4d6D;
+    box-shadow: 0 0 0 3px rgba(255, 77, 109, 0.15);
+}
+.input-enter-part  button {
+    font-size: 1rem;
+    padding: 0.5rem;
+    width: 250px;
+    height: 50px;
+}
+
+.input-tabs .active-tab {
+    background-color: #ff4d6d;
+    color: white;
+    border: 1px solid #ff4d6d;
+}
+
+.input-tabs .tab {
+    background-color: white;
+    color: #1A1A2E;
+    border: 2px solid #FF4D6D;
+}
+
+.input-enter-part textarea {
+    background: #FFFFFF;
+    border: 1px solid #FF4D6D;
+    min-width: 800px;
+    min-height: 200px; 
+    border-radius: 8px;
+    color: #1A1A2E;
+    padding: 1rem;
+}
+
+.prompt-button {
+    padding: 0.75rem 2.5rem;
+    background-color: #0099FF;
+    color: #FFF0F3;
+    font-size: 1rem;
+    font-size: 600;
+    border: 1px solid #0099FF;
+    border-radius: 8px;
+    align-self: self-start;
+}
+
+/* Exercises page */
+.exercises-page {
+    display: flex;
+    min-height: 100vh;
+}
+
+.exercises-main {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100vw;
+    
+}
+
+.exercises-start-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+}
+
+.exercises-start-buttons > button {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem;
+    border-radius: 8px;
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    color: #1A1A2E;
+    font-size: 0.9rem;
+    font-weight: 600;
+    gap: 0.5rem;
+}
+
+.exercises-start-buttons > button:focus {
+    border-color: #FF4d6D;
+}
+
+.exercises-start-buttons button > svg {
+    width: 25px;
+    height: 25px;
+}
+
+.flashcard {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 10px #FF4D6D;
+    padding: 1rem;
+    border-radius: 8px;
+    gap: 2rem;
+}
+
+.flashcard .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flashcard .exercise-name {
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+    
+}
+
+.flashcard h2 {
+    text-align: center;
+    color: #1A1A2E;
+}
+
+.flashcard .footer {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+
+}
+
+.flashcard .exercise-name p {
+    color: #FF4D6D;
+}
+
+/* Learn Page */
+
+.learn-card {
+    background-color: #FFF0F3;
+    border-radius: 8px;
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.learn-card .mcqs {
+    background-color: white;
+    color: #1A1A2e;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.mcqs-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 0.5rem;
+    margin-top: 1rem;
+    align-items: center;
+}
+
+.mcqs-options > button {
+    display: flex;
+    gap: 8px;
+    padding: 0.75rem 1.8rem;
+    border-radius: 8px;
+    background: none;
+    border: 1px solid #FF4D6D;
+}
+
+.mcqs-options > button:focus {
+    background-color: #FF4D6D;
+    color: white;
+}
+
+.learn-card .exercise-label {
+    display: flex;
+    gap: 0.6rem;
+    color: #0099FF;
+    align-items: center;
+}
+
+.writing-1, .writing-2 {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 1rem 0;
+    background-color: white;
+    border: 1px solid #0099FF;
+    border-radius: 8px;
+    padding: 1rem;
+     box-shadow: 0 0 10px #0099FF;
+     flex: 1;
+}
+
+.writing-1 input,
+.writing-2 input {
+    background-color: #FFF0F3;
+    color: #FF4D6D;
+    border: 1px solid #FF4d6d;
+    padding: 0.75rem 1.1rem;
+}
+
+
+.writing-1 .check-button,
+.writing-2 .check-button {
+    width: 100px;
+    padding: 0.75rem;
+    background-color: #FF4D6D;
+    color: #FFF0F3;
+    border: 1px solid #FF4D6D;
+
+}
+
+.writing-exercises {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Test Page */
+.test-card {
+    box-shadow: 0 0 10px 5px rgb(0, 0, 0, 0.1);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.test-card .exercise-label {
+    display: flex;
+    gap: 0.6rem;
+    color: #FF4D6D;
+    align-items: center;
+}
+
+.content .header .icons {
+    display: flex;
+    gap: 0.3em;
+    
+}
+
+.content .header {
+    display: flex;
+    justify-content: space-between;
+    opacity: 0.6;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.content .question {
+    margin-bottom: 1rem;
+}
+
+.content .mcqs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.content .mcqs > button {
+    padding: 0.75rem 1.8rem;
+    background-color: white;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+}
+
+.content .mcqs > button:focus {
+    background-color: #FF4D6d;
+    color: white;
+    border-color: #FF4D6D;
+}
+
+/* Match Page */
+.match-card {
+    background-color: #f0f0f0;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border-radius: 8px;
+    box-shadow: 3px 3px 4px 6px rgb(0, 0, 0, 0.1);
+}
+
+.match-card .exercise-label {
+    display: flex;
+    gap: 0.6rem;
+    color: #0099FF;
+    align-items: center;
+}
+.match-card .options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.match-card .options > button {
+    background-color: white;
+    padding: 2rem 1rem;
+    border: 3px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 1rem;
+}
+
+.match-card .options > button:hover {
+    border-color: #ff4d6d;
+    background-color: #FFF0F3;
+}
+
+.match-card .options > button:focus {
+    border-color: #0099ff;
+    background-color: #C3E2FF;
+
+}
+
+/* MCQ's Page */
+.mcqs-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.mcqs-card .exercise-label {
+    display: flex;
+    gap: 0.6rem;
+    color: #FF4D6D;
+    align-items: center;
+}
+
+.mcqs-card .content {
+    display: grid;
+    grid-template-columns: repeat(2, 500px);
+    gap: 2rem;
+    
+}
+
+.mcqs-card .content > div {
+    box-shadow: 3px 4px 4px 4px rgb(0, 0, 0, 0.3);
+    padding: 1rem;
+}
+
+
+.audio-mcqs-option {
+    display: flex;
+    gap: 0.4rem;
+}
+
+.mcqs-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+}
+
+.mcqs-buttons > button {
+    padding: 0.25rem;
+    background-color: #FFFFFF;
+    border: 2px solid #0099FF;
+    border-radius: 8px;
+}
+
+.mcqs-buttons > button:focus {
+    background-color: #99EDFF;
+
+}
+
+/* Pronunciation Page */
+.pronunciation-card {
+    background-color: #FFF0F3;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border-radius: 20px;
+}
+
+.pronunciation-card .exercise-label {
+    display: flex;
+    gap: 0.6rem;
+    color: #0099FF;
+    align-items: center;
+}
+
+.pronunciation-card .content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.pronunciation-card .content > div {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 20px;
+    border: 2px solid #FF4D6D;
+}
+.pronunciation-card .content .speak-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    padding: 0.25rem 0.75rem;
+    background-color: #ff4D6D;
+    color: white;
+    border: 1px solid #FF4D6D;
+    margin-top:1rem;
+    border-radius: 8px;
+}
+
+.pronunciation-card .content .speak-button:focus {
+    background-color: #0099FF;
+    border-color: #0099FF;
+}
+
+.pronunciation-card .content .exercise-4 {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    
+}
+
+.pronunciation-card .content .exercise-4 input {
+    padding: 0.25rem;
+    border-radius: 8px;
+    outline: none;
+    border: 1px solid #cccaca;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.pronunciation-card .content .exercise-4 input:focus {
+    border-color: #FF4D6D;
+    color: #FF4D6D;
+}
+
+.pronunciation-card .content .exercise-4 .microphone-button {
+    margin-top: 0;
+}
+
+/* Translation Page */
+.translation-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    
+}
+
+.translation-card .exercise-label {
+    display: flex;
+    color: #FF4D6D;
+    gap: 0.6rem;
+    align-items: center;
+}
+
+.translation-text {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    
+}
+
+.translation-text .translated, 
+.translation-text .statement {
+    background-color: #FFF0F3;
+    color: black;
+    padding: 1rem 1.5rem;
+    border-radius: 50px;
+    align-self: end;
+    border: 2px solid #FF4D6D;
+}
+
+.translation-text .statement {
+    background-color: white;
+    color: #1A1A2E;
+    align-self: start;
+    border: 2px solid #0099FF;
+}
+
+/* Fill in the blanks page */
+
+.fill-blanks-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.fill-blanks-card .exercise-label {
+    color: #0099FF;
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+}
+
+.fill-blanks-card .content {
+    box-shadow: 0 0 3px 3px rgb(0, 0, 0, 0.1);
+    padding: 1rem;
+}
+
+/* Profile Page */
+.profile-page {
+    display: flex;
+    min-height: 100vh;
+    width: 100vw;
+}
+
+.profile-page main {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    color: #1A1a2e;
+    min-width: 500px;
+    margin: auto;
+}
+
+.profile-header .profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    
+}
+
+.profile-header .profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.profile-header {
+    display: flex;
+}
+
+.profile-header .edit-icon {
+    color: #FF4D6D;
+}
+
+.interested-languages-card,
+.reason-language-card {
+    background-color: #FFF0F3;
+    padding: 1rem;
+    box-shadow: 2px 2px 6px 2px #FF4D6D;
+    min-width: 100%;
+}
+
+.interested-languages-card button,
+.reason-language-card button {
+    margin-right: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: #0099FF;
+    color: white;
+    border-radius: 8px;
+    border: none;
+    
+}
+
+.interested-languages-card h3,
+.reason-language-card h3 {
+    margin-bottom: 0.5rem;
+}
+
+.profile-progress-report > div {
+    padding: 0.5rem;
+    border: 1px solid #cbcaca;
+    border-radius: 8px;
+}
+
+.profile-progress-report {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.language-progress-card .upper-part {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.language-progress-card .upper-part > div {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #FFF0F3;
+    border: 1px solid #FF4D6D;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.language-progress-card .upper-part > p {
+    color: #ff4d6d;
+    font-style: italic;
+}
+
+.language-progress-card .lower-part {
+    text-align: center;
+    margin-top: 0.75rem;
+}
+
+.lower-part span {
+    color: #0099FF;
+    font-weight: bold;
+}
+
+.total-words-learned-card,
+.current-streak-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.total-words-learned-card > div,
+.current-streak-card > div {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.total-words-learned-card .child > h3,
+.current-streak-card .child > h3 {
+   color: #0099FF;
+}
+
+.total-words-learned-card .child > .progress-icon,
+.current-streak-card .child > .progress-icon {
+    font-size: 22px;
+    color: #FF4D6d;
+}
+
+.profile-page main > .log-out-button {
+    padding: 0.75rem 1.8rem;
+    background-color: #FF4D6D;
+    color: white;
+    border: none;
+    font-size: 1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+/* Word Bank Page */
+.word-bank-page {
+    display: flex;
+    min-height: 100vh;
+}
+
+.word-bank-page main {
+    padding: 1rem;
+    margin: auto;
+
+}
+
+.word-bank-page main .lesson {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+    width: 600px;
+}
+
+.word-bank-page main .lesson .topic {
+    display: flex;
+    justify-content: space-between;
+    background-color: #FFF0F3;
+    padding: 1rem;
+    align-items: center;
+}
+
+.word-bank-page main .lesson .topic > h3 {
+    color: #0099FF;
+}
+
+.word-bank-page main .lesson .topic > p {
+    color: #FF4D6d;
+    font-style: italic;
+}
+
+.word-bank-page .lesson .keywords {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    
+}
+
+.word-bank-page .lesson .keywords > :nth-child(2n - 1) {
+    padding: 0.75rem 1.8rem;
+    background-color: #FF4D6D;
+    color: white;
+    border: 1px solid #FFF0F3;
+    border-radius: 8px;
+}
+
+.word-bank-page .lesson .keywords > :nth-child(2n) {
+    padding: 0.75rem 1.8rem;
+    background-color: #FFFFFF;
+    color: #1A1A2E;
+    border: 1px solid #FF4D6D;
+    border-radius: 8px;
+}
