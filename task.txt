@@ -143,8 +143,3 @@ Test and find errors after each feature.
 
 
 
-
-
-
-- Distractions
-> My personal weatherman
