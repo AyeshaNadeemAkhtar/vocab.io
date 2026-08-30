@@ -1,5 +1,5 @@
-
-Latest
+INITIAL THINGS
+==============
 
 Skipped the Listening part bcz already listening exercises are in other 
 exercises so what should i add that could be new. 
@@ -9,8 +9,6 @@ delete the previous and make a new backend.
 And read these points written up.
 How to connect backend with frontend
 API stuff, text input first
-
-Latest
 
 1. Make a vocab.io-backend folder in github - DONE;
 2: put it locally. - DONE;
@@ -52,10 +50,13 @@ SpaCy, EdenAI,  or some other.
 
 15th August:
 Keyword extraction from vocab.io - Claude
-Last most question
+=========================================
+
 1: Install every library. - ✔ (argostranslate is not installed because of heaviness.)
+========================
 
 2: User gives text. Clean and validate text.
+===========================================
 
     16th August 2026:
     - Test out these errors 
@@ -83,20 +84,10 @@ Last most question
         SKIPPED: `"caf\u00e9 \ud83d\ude00"` (emoji + accented chars) — tests if sanitize breaks on non-ASCII
          ✔  `"text\x00with\x00null\x00bytes"`
 
-
-
-
-
-
-
-
-
-
-
-
-
 18th August:
 Important: Keyword & Logo
+=========================
+
  ✔: Pull keywords out with YAKE 
      ✔: Test large text => English, Italian, Finnish, Spanish
          ✔ Implement the keyword extractor API => AI extraction ->LastMost
@@ -106,7 +97,7 @@ Important: Keyword & Logo
             and to check the flow.
               
     2: github
-        - Solve your .env issue by following "env conversation" LastMost
+        ✔ Solve your .env issue by following "env conversation" LastMost
         in claude
         - Then solve the upstream main issue and login using browser
         or SSH key or personal token.
@@ -115,10 +106,6 @@ Important: Keyword & Logo
         - Share with Alina
     ✔ Decorate Dropdown
     ✔ Make Dropdown required
-    - Do debugging with the whole like keyword extraction
-        ✔ Review code & remove breakpoints.
-        ✔ Put Breakpoints
-        ✔. Put on Debugger
     ✔ Check the difference if user gives the dropdown language or not.
     - Check how effective is it by giving large text in each language
     one by one. 
@@ -130,16 +117,54 @@ Important: Keyword & Logo
     - Make the whole vocab.io folder a git repository and give access to 
     Alina about it. 
     - Make logo of vocab.io
-   
 
+ 4: Download specific language models for translation.
+====================================================
+   ✔: Write the remaining code from step 4 of "Keyword extraction for
+   vocab.io" from the for loop. 
+   ✔: Try to write comments explaining what is happening.
 
-4: Download specific language models for translation.
+    ✔: Solve RAM memory errors and run setup_translation.py to download models
+   they require 300MB so make space.
+
+    ✔: Models are installed.
+
+    3: Figure out what alina needs to do and send her.
+    4: Figure out the Docs
+    5: Figure out what to do with meanings of english keywords if they
+    are difficult. 
+
 5: Get English Meanings for keywords.
+=====================================
+    1: Understand & Write translate.py from step 5
+    2: Write get_simple_keywords() for gemini call for english keywords
+    definitions. from get_simple_definitions() of English* last and 
+    second last conversation text.
+
+Q: Do argos need to translate one word each time or multiple words at 
+once in other words batch, how can we make it so? 
+
+TODO: Work on signup / login and adding links and paths with respect to flask
+to create a coherent flow.
+
 6: Add imports in "app.py" => Update.
 7: Update "input.jsx"
 8: Test and find errors
 
+NMT: Neural Machine Translation
+
+Q: Why you used argotranslate separately instead of asking the LLM
+to translate keywords and give it together?
+Q: But argotranslate models cost memory, so can your pc handle the offline
+bundles? 
+
+
 Test and find errors after each feature. 
 
 
+THINGS FOUND
+=============
+
+1: When i gave small text, because it had to give 15 keywords  , YAKE and
+the LLM gave me additional related words - COOl.
 
