@@ -136,10 +136,12 @@ Important: Keyword & Logo
 
 5: Get English Meanings for keywords.
 =====================================
-    1: Understand & Write translate.py from step 5
-    2: Write get_simple_keywords() for gemini call for english keywords
+    ✔: Understand & Write translate.py from step 5
+    ✔: Go on Writing get_simple_keywords() for gemini call for english keywords
     definitions. from get_simple_definitions() of English* last and 
     second last conversation text.
+    ✔: See for errors
+
 
 Q: Do argos need to translate one word each time or multiple words at 
 once in other words batch, how can we make it so? 
@@ -147,8 +149,21 @@ once in other words batch, how can we make it so?
 TODO: Work on signup / login and adding links and paths with respect to flask
 to create a coherent flow.
 
+FOUND: Gemini only allows 20 requests per day for text models and no more than 5 requests 
+per minute.
+
+Options of Replacement:
+1: Groq => 1000 requests per day
+2: OpenRouter => 50 requests per day
+
 6: Add imports in "app.py" => Update.
-7: Update "input.jsx"
+=====================================
+  1: Do debugging to find out why keywords are null.
+  2: Solve the errors of "translation unavailable" for keywords
+  and move on.
+
+7: Update "input.jsx" with table representation
+===============================================
 8: Test and find errors
 
 NMT: Neural Machine Translation
