@@ -517,6 +517,25 @@ div.container {
     align-self: self-start;
 }
 
+.keywords-table {
+    margin-top: 24px;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.keywords-table th,
+.keywords-table td {
+    border: 1px solid #ddd;
+    padding: 8px 12px;
+    text-align: left;
+}
+
+.keywords-table th {
+    background-color: #FFF0f3;
+    font-weight: bold;
+    
+}
+
 /* Exercises page */
 .exercises-page {
     display: flex;

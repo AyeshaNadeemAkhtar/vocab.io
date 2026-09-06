@@ -19,8 +19,9 @@ def get_best_keywords(text: str, language: str="english", max_keywords=15):
     or early-appearing words and can miss rare-but-important vocabulary.
 
     Your job: Read the actual text yourself, and return the {max_keywords}
-    most useful vocabulary words for a learner to study. You may reuse best
-    words from YAKE's list, drop weak/filler ones it included, and add
+    most useful vocabulary words for a learner to study. avoid including multiple 
+    inflections/conjugations of the same root word — pick the most useful 
+    single form. You may reuse best words from YAKE's list, drop weak/filler ones it included, and add
     meaningful words YAKE missed. Favour genuinely useful vocabulary over
     frequency. 
 

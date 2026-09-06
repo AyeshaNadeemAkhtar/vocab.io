@@ -24,6 +24,7 @@ def yake_extract_keywords(text: str, language: str = "english", max_keywords: in
     keywords = kw_extractor.extract_keywords(text)
 
     # ("parco", 0.09) => A tuple of YAKE keywords and pair[1] refers to core
+    # key = function which choose second element(0.09) in each item(tuple) to sort
     keywords.sort(key=lambda pair : pair[1])
 
     result = []

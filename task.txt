@@ -158,9 +158,76 @@ Options of Replacement:
 
 6: Add imports in "app.py" => Update.
 =====================================
-  1: Do debugging to find out why keywords are null.
-  2: Solve the errors of "translation unavailable" for keywords
+  ✔: Do debugging to find out why keywords are null.
+  ✔: Solve the errors of "translation unavailable" for keywords
   and move on.
+  ✔: Complete get_meanings function from the last in translate.py from the conversation
+  "qroq request for translations".
+
+  ✔: Roughly testing three languages for keywords* get the three paragraphs for 
+  finnish, spanish and english and get keywords from them and give
+  them to claude to get the feedback.
+
+  ✔: And then make the table showing words and their meanings.
+      - Continue on writing input.jsx by Step 3 and 4 from Keyword extraction *
+      from claude conversation.
+
+  - Do the feature if user sends the request to aI to get data and then extract keywords.
+
+  - After you switch tabs, the text and the table generated, they disappear , they go away
+  so you can handle it. how can i make it more friendly to switch between
+  tabs without losing data.
+  
+  ✔: Solve the error for Argo Refinement failure.
+
+
+  
+  -: If gemini api don't work or crashes , simple return the YAKE
+  keywords, write code for this in llm_extract.py.
+
+  - If the text is in italian, but the user selected english, it will 
+  treat the definitions as so, instead of getting translations for
+  italian keywords. So solve that error too.
+
+  - When Groq sometimes failed refinement because of empty text, do something 
+  about it.
+
+  - Responses from Argos like "mainstream" garbage, handle that too.
+
+  - Meanings come first and then words while consoling the data, correct
+  the sequence.
+  
+  - If it still shows error in case of spanish, just reduce the max_tokens from 1000 to
+  800.
+ 
+  - English has definitions, so make sure that the table correctly show definitions for
+  English and meanings for non-English.
+
+  - Make your prompts even better to get best results.
+
+  - Add a loading button to wait for Response for user.
+
+SUMMMARY OF AI AND TOOLS FOR 
+============================
+
+KEYWORD EXTRACTION:
+1: YAKE  2: Gemini-3.6-Flash
+
+TRANSLATION: 
+ENGLISH: Gemini-3.6-Flash
+OTHERS: argostranslate + refinement with groq
+
+
+
+
+  5: Move onto input.jsx to make table out of keywords
+  6: And then onto making and doing games.
+        - Understand and write with comments.
+
+
+
+  4: Do the logo must on 5th september and put it in intro page.
+  5: Do the testing after completing this root function of keywords.
 
 7: Update "input.jsx" with table representation
 ===============================================
@@ -183,3 +250,9 @@ THINGS FOUND
 1: When i gave small text, because it had to give 15 keywords  , YAKE and
 the LLM gave me additional related words - COOl.
 
+
+FEATURE: USER SENDS REQUEST TO AI TO GIVE TEXT AND KEYWORDS:
+===========================================================
+
+- Talk with Claude
+- Step by step code

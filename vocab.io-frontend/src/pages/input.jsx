@@ -7,12 +7,17 @@ export default function Input() {
   const [aiStage, setAiStage] = useState('prompt') // 'response'
   const [text, setText] = useState('') // Shared Textarea content
   const [language, setLanguage] = useState('')
+  const [keywords, setKeywords] = useState([]) // List of dicts of words and meanings
+  const [loading, setLoading] = useState(false) // for button showing that AI response is coming
+  const [error, setError] = useState('')
+
 
   const handleTabClick = (tab) => {
     setActiveTab(tab); // 'generate' or 'input' according to button clicked.
     if (tab === 'generate') {
       setAiStage('prompt')
       setText('') // clear the text when switching tabs
+      setKeywords([])
     }
   };
 
@@ -27,6 +32,11 @@ export default function Input() {
         return
       }
 
+      /* Activate the loading state for AI response */
+      setError('')
+      setLoading(true)
+      setKeywords([])
+
       try {
         const response = await fetch('http://127.0.0.1:5000/api/keywords', {
           method: 'POST',
@@ -39,12 +49,20 @@ export default function Input() {
 
         if (!response.ok) {
           console.error("Error: ", data.error);
+          setError(data.error || "Something went wrong")
           return;
         }
 
         console.log("Keywords: ", data.keywords)
+
+        /* Set the keywords to be response keywords */
+        setKeywords(data.keywords)
       } catch(err) {
         console.log("Request failed: ", err)
+        setError("Request failed - is the server running?")
+      } finally {
+        /* Loading should be stopped after success or failed attempt */
+        setLoading(false)
       }
     }
     else if (aiStage === 'prompt') {
@@ -59,6 +77,7 @@ export default function Input() {
   }
   
   const buttonLabel = 
+    loading ? "Extracting..." : 
     activeTab === 'input' || aiStage === 'response' ? 'Generate' : 'Prompt'
 
     return (
@@ -101,7 +120,32 @@ export default function Input() {
                   readOnly={activeTab === 'generate' && aiStage === 'response'} // Can't delete or edit the ai response
               />
             </div>
-              <button onClick={handleButtonClick} className="prompt-button">{buttonLabel}</button>
+              <button onClick={handleButtonClick} 
+              className="prompt-button"
+              disabled={loading}
+              
+              >{buttonLabel}</button>
+
+              {error && <p style={{ color: "red" }}>{error}</p>}
+
+              {keywords.length > 0 && (
+                <table className="keywords-table">
+                  <thead>
+                    <tr>
+                      <th>Words</th>
+                      <th>Meanings</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {keywords.map((k, i) => (
+                      <tr key={i}>
+                        <td>{k.word}</td>
+                        <td>{k.meaning}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              )}
               
           </div>
         </div>
