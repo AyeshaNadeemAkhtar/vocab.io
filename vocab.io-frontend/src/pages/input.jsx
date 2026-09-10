@@ -9,9 +9,58 @@ export default function Input() {
   const [language, setLanguage] = useState('')
   const [keywords, setKeywords] = useState([]) // List of dicts of words and meanings
   const [loading, setLoading] = useState(false) // for button showing that AI response is coming
-  const [error, setError] = useState('')
+  const [error, setError] = useState('') 
+  const [lastProcessedText, setLastProcessedText] = useState('') // Store the last text so that the user can't send a request for the same paragraph.
+
+  const callApi = async (endpoint, body, onSuccess) => {
+    /* It is checking language usestate here */
+    if (!language) {
+      setError("Please select a language")
+      return
+    }
+
+    setError('')
+    setLoading(true)
+
+    try {
+      const response = await fetch(`http://127.0.0.1:5000${endpoint}`, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(body) /* Here prompt, text and language will be passed */
+      });
+
+      const data = await response.json()
+      if (!response.ok) {
+        setError(data.error || "Something went wrong")
+        return
+      }
+
+      /* What this function will refer to */
+      onSuccess(data)
+    } catch(err) {
+      setError("Request failed - is the server running?")
+    } finally {
+      setLoading(false)
+    }
+
+  }
 
 
+  const generateAIText = () => {
+    callApi('/api/generate_text', {prompt: text, language}, (data) => {
+      /* This function will be called onSuccess(data) and the text will appear in textarea */
+      setText(data.text)
+      setAiStage('response')
+    })
+  }
+
+  const extractKeywords = (sourceText) => {
+    if (sourceText === lastProcessedText) return
+    callApi('/api/keywords', {text: sourceText, language}, (data) => {
+      setKeywords(data.keywords)
+      setLastProcessedText(sourceText)
+    })
+  }
   const handleTabClick = (tab) => {
     setActiveTab(tab); // 'generate' or 'input' according to button clicked.
     if (tab === 'generate') {
@@ -26,59 +75,21 @@ export default function Input() {
       console.log("Generate keywords from ", text)
       console.log("JSON version: ", JSON.stringify({text, language}))
 
-      /* Only pass text with language selected */
-      if (!language) {
-        console.error("Please select a language")
-        return
-      }
-
-      /* Activate the loading state for AI response */
-      setError('')
-      setLoading(true)
-      setKeywords([])
-
-      try {
-        const response = await fetch('http://127.0.0.1:5000/api/keywords', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify( {text, language} )
-        });
-
-        const data = await response.json();
-        console.log("Data: ", data)
-
-        if (!response.ok) {
-          console.error("Error: ", data.error);
-          setError(data.error || "Something went wrong")
-          return;
-        }
-
-        console.log("Keywords: ", data.keywords)
-
-        /* Set the keywords to be response keywords */
-        setKeywords(data.keywords)
-      } catch(err) {
-        console.log("Request failed: ", err)
-        setError("Request failed - is the server running?")
-      } finally {
-        /* Loading should be stopped after success or failed attempt */
-        setLoading(false)
-      }
+      extractKeywords(text)
     }
-    else if (aiStage === 'prompt') {
-      console.log("Sending prompt to AI", text)
-      setText("The response came back")
-      setAiStage('response')
+    else if (activeTab == 'generate' && aiStage == 'prompt') {
+      generateAIText()
     }
-    else
-    {
-      console.log("Generating keywords from AI response")
+    else {
+      extractKeywords(text)
     }
-  }
-  
+ }
+
   const buttonLabel = 
-    loading ? "Extracting..." : 
-    activeTab === 'input' || aiStage === 'response' ? 'Generate' : 'Prompt'
+    /* Loading ? True : False where true and false themselves contain conditions */
+    loading ? 
+    (activeTab === 'generate' && aiStage === 'prompt') ? "Generating...": "Extracting..." :
+    (activeTab === 'input' || aiStage === 'response' ? 'Generate' : 'Prompt')
 
     return (
         <div className="input-panel">
@@ -90,7 +101,6 @@ export default function Input() {
               name="language-options"
               value={language}
               onChange={(e) => setLanguage(e.target.value)}
-              
             >
               <option value="">Select a language</option>
               <option value="english">English</option>
@@ -114,7 +124,7 @@ export default function Input() {
                 </button>
               </div>
               <textarea 
-                  placeholder= {activeTab === 'input' ? "Enter your text" : "Give me a prompt"}
+                  placeholder= {activeTab === 'input' ? "Enter your text" : "Write a paragraph about home in italian."}
                   value={text}
                   onChange={(e) => setText(e.target.value)}
                   readOnly={activeTab === 'generate' && aiStage === 'response'} // Can't delete or edit the ai response

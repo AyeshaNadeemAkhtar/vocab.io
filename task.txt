@@ -254,5 +254,22 @@ the LLM gave me additional related words - COOl.
 FEATURE: USER SENDS REQUEST TO AI TO GIVE TEXT AND KEYWORDS:
 ===========================================================
 
-- Talk with Claude
-- Step by step code
+ ✔: Write generate.py from the conversation "Keyword extraction for vocab.io*
+second last response.
+
+✔: Write app.py with helper clean function and other too from "Write app.py"
+claude conversation.
+
+✔: Write input.jsx and remove overall code by following "fix input.jsx"
+conversation from claude.
+
+1: Ask Claude to increase the size of paragraph in case of AI 
+2: And make the paragraph look more appealing instead of one line 
+3: Increase the font-size of paragraph in textarea.
+4: Test the last processed text feature.
+
+Go on making games by taking these keywords.
+
+- Fix signup and login errors too
+- Connect the whole application
+- Display the index page at "/" default route.

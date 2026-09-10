@@ -36,5 +36,4 @@ def sanitize_text(raw_text: str) -> str:
     if len(clean) < MIN_CHARS:
         raise ValueError("Text too short to extract meaningful keywords")
 
- 
     return clean

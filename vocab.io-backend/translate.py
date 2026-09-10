@@ -79,6 +79,8 @@ def refine_with_groq(original_text: str, keywords: list, src_lang: str) -> dict:
 
     For each word below, give its correct meaning IN CONTEXT of this text
     (use the base/dictionary form, e.g. infinitive for verbs).
+    Return ONLY plain English words or short phrases as definitions.
+    Do not include emojis, symbols, or non-English characters.
 
     Words: {keywords}
 

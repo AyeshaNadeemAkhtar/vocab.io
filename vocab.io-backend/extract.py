@@ -28,7 +28,9 @@ def yake_extract_keywords(text: str, language: str = "english", max_keywords: in
     keywords.sort(key=lambda pair : pair[1])
 
     result = []
-    for kw, score in keywords:
+    # Because we are not using score, we can just replace it with 
+    # underscore for readability.
+    for kw, _ in keywords:
         result.append(kw)
 
     return result

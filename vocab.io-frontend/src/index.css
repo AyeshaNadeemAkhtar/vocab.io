@@ -452,12 +452,17 @@ div.container {
 }
 
 .input-main {
-    padding: 2rem;
+    padding: 24px;
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
+.input-main > * {
+    margin-bottom: 20px;
+}
 .input-main .language-dropdown {
     padding: 10px 14px;
     font-size: 15px;
@@ -515,8 +520,19 @@ div.container {
     border: 1px solid #0099FF;
     border-radius: 8px;
     align-self: self-start;
+    transition: background-color 0.2s ease;
 }
 
+.prompt-button:hover:not(:disabled) {
+    background-color: #007acc;
+}
+
+.prompt-button:disabled {
+    background-color: #ccc;
+    cursor:not-allowed;
+    border: none;
+    color: black;
+}
 .keywords-table {
     margin-top: 24px;
     width: 100%;
@@ -526,7 +542,7 @@ div.container {
 .keywords-table th,
 .keywords-table td {
     border: 1px solid #ddd;
-    padding: 8px 12px;
+    padding: 12px 16px;
     text-align: left;
 }
 
@@ -534,6 +550,13 @@ div.container {
     background-color: #FFF0f3;
     font-weight: bold;
     
+}
+.keywords-table tbody tr {
+    border-bottom: 1px solid #FFF0F3;
+}
+
+.keywords-table tbody tr:hover {
+    background-color: #FFF0F3;
 }
 
 /* Exercises page */
