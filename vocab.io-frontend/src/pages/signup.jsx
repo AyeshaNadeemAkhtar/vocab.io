@@ -39,7 +39,7 @@ export default function SignUp() {
     ]);
 
     if (error) {
-      console.log(error.message)
+      console.log("Signup failed:", error.message)
       setLoading(false)
       return
     }

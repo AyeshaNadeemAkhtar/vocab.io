@@ -263,10 +263,22 @@ claude conversation.
 ✔: Write input.jsx and remove overall code by following "fix input.jsx"
 conversation from claude.
 
+Go on to fixing styles for sign up and login page by following 
+the last conversation on "Keyword Extraction for vocab.io"
+
 1: Ask Claude to increase the size of paragraph in case of AI 
-2: And make the paragraph look more appealing instead of one line 
-3: Increase the font-size of paragraph in textarea.
-4: Test the last processed text feature.
+2: And make the paragraph look more appealing instead of one line so that it doesn't 
+extend to one line, but wrap itself up.
+3: Fix the styling of signup and login page so that the animation
+don't take all the space
+4: Connect the app.
+5: If AI fails to give keywords, use YAKE keywords.
+6: Increase the font-size of paragraph in textarea.
+✔: Test the last processed text feature.
+
+Q: Should i connect the index page to flask index route so that it is 
+rendered on that and similarly all other routes instead of React stand
+alone routes?
 
 Go on making games by taking these keywords.
 

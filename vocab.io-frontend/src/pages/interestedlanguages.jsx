@@ -26,11 +26,14 @@ export default function InterestedLanguages() {
     async function handleContinue() {
         const { data : { user }} = await supabase.auth.getUser() /* Don't understand unnecessary braces */
        
+        /* Don't pass the whole language object, just the labels */
+        const languageLabels = onboardingData.languages.map(lang => lang.label)
+        const reasonLabels = onboardingData.reasons.map(reason => reason.label)
         const { error } = await supabase
         .from("profiles")
         .update({
-            reason_of_learning_language: onboardingData.reasons,
-            interested_languages: onboardingData.languages
+            reason_of_learning_language: reasonLabels,
+            interested_languages: languageLabels
         })
         .eq("id", user.id)
 

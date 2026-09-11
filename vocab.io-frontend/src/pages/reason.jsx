@@ -15,6 +15,8 @@ export default function Reason() {
         { label: "Travel", icon: <GiAirplaneDeparture/> },
         { label: "Vocals", icon: <GiMicrophone/> }
     ]
+
+
     
     return (
         <div className="reason-container">
