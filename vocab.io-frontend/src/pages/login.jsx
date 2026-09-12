@@ -48,7 +48,7 @@ export default function Login() {
       <div className="container">
         <div className="signup-illustration">
           <Lottie animationData={loginIllustration}
-           Loop={true}
+           loop={true}
            className="lottie" 
           />
         </div>
