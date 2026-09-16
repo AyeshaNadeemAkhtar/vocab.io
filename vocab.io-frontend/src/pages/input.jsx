@@ -1,5 +1,6 @@
 import { useState } from "react"
 import Sidebar from "../Components/sidebar.jsx"
+import { supabase } from "../lib/supabase-client.js"
 
 export default function Input() {
   /* By Default, 'Input' is the active tab */
@@ -45,6 +46,37 @@ export default function Input() {
 
   }
 
+  const saveToSupabase = async (sourceText, extractedKeywords) => {
+    /* Get the currently logged in user */
+    const { data: { user } } = await supabase.auth.getUser() // get the user information by going into results.data.user 
+
+    /* Create session, insert row and return it back to you */
+    const { data: session, error: sessionError} = await supabase 
+      .from("sessions")
+      .insert({ user_id: user.id, language, source_text: sourceText})
+      .select()
+      .single() // Select only one row, wraps array into one object
+
+    if (sessionError) {
+      console.error("Failed to save session: ", sessionError.message)
+      return
+    }
+
+    const keywordsRows = extractedKeywords.map(k => ({
+      user_id: user.id,
+      session_id: session.id,
+      word: k.word,
+      translation: k.meaning
+    }));
+
+    const { error: keywordsError } = await supabase.from("keywords").insert(keywordsRows)
+      
+    if (keywordsError) {
+      console.error("Failed to save keywords: ", keywordsError.message)
+    }
+  }
+
+  
 
   const generateAIText = () => {
     callApi('/api/generate_text', {prompt: text, language}, (data) => {
@@ -58,6 +90,7 @@ export default function Input() {
     if (sourceText === lastProcessedText) return
     callApi('/api/keywords', {text: sourceText, language}, (data) => {
       setKeywords(data.keywords)
+      saveToSupabase(sourceText, data.keywords)
       setLastProcessedText(sourceText)
     })
   }

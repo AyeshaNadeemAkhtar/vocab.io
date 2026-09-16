@@ -1,4 +1,94 @@
+import { useState, useEffect } from "react"
+import { supabase } from "../lib/supabase-client.js"
+
+
 export default function Flashcard() {
+
+    const [wordBank, setWordBank] = useState([])
+    const [loading, setLoading] = useState(true) /* How used? */
+    const [index, setIndex] = useState(0) // How used?
+    const [flipped, setFlipped] = useState(false)
+
+    useEffect(() => {
+
+        /* useEffect can't be async bcz async returns a promise, however
+        useEffect expects a function, so we write a function and then
+        calls it */
+        const loadWords = async () => {
+            const { data: { user } } = await supabase.auth.getUser()
+
+            if (!user) {
+                setLoading(false)
+                return
+            }
+
+            const { data, error } = await supabase
+                .from("keywords")
+                .select("id, word, translation")
+                .eq("user_id", user.id)
+                .order("created_at", { ascending: false })
+
+            if (error) {
+                console.error("Failed to fetch keywords: ", error.message)
+            } else {
+                setWordBank(data)
+            }
+            setLoading(false)
+        }
+
+        /* Call the same function */
+        loadWords()
+    }, [])
+
+    const recordFeedback = async (keywordId, wasCorrect) => {
+        const { data: { user } } = await supabase.auth.getUser()
+
+        /* If the data about a keyword already exists */
+        const { data: existing } = await supabase
+            .from("word_progress")
+            .select("*")
+            .eq("user_id", user.id)
+            .eq("keyword_id", keywordId)
+            .maybeSingle() /* Expect one row or null */
+
+        /* Update the data for existing keyword */
+        if (existing) {
+            await supabase
+                .from("word_progress")
+                /* These are the columns of table, hence dictionary */
+                .update({
+                    correct_count: existing.correct_count + (wasCorrect ? 1 : 0),
+                    incorrect_count: existing.incorrect_count + (wasCorrect ? 0 : 1)
+                })
+                .eq("id", existing.id)
+        } else {
+            /* If it's the first time a keyword is reviewed */
+            await supabase.from("word_progress").insert({
+                user_id: user.id,
+                keyword_id: keywordId,
+                correct_count: wasCorrect ? 1 : 0,
+                incorrect_count: wasCorrect ? 0 : 1,
+                last_reviewed_at: new Date().toISOString()
+            })
+        }
+    }
+    
+    const handleNext = () => {
+        /* Show the word side of card */
+        setFlipped(false)
+        /* (0 => 0 + 1 % 4) => 1 Moves from 0 to next index which is 1 */
+        setIndex((prev) => (prev + 1) % wordBank.length)
+    }
+
+    const handlePrev = () => {
+        setFlipped(false)
+
+        /* (0 - 1 + 4) = 3 % 4 = 3 Moves backwards from 0 to last index 3 */
+        setIndex((prev) => (prev - 1 + wordBank.length) % wordBank.length)
+    }
+
+    const handleFlip = () => setFlipped(!flipped)
+
     return (
          <div className="flashcard">
                <div className="header">

@@ -266,9 +266,31 @@ conversation from claude.
 ✔: Go on to fixing styles for sign up and login page by following 
 the last conversation on "Keyword Extraction for vocab.io"
 
-Step: 1 Do for flashcards feature from Claude conversation
+✔: Step: 1 Do for flashcards feature from Claude conversation
 "Setup Flashcards Feature"
 
+✔: Keep on writing step 3 of writing supabase function in input.jsx
+from conversation "Setup Keywords Feature*.
+
+✔: Go on doing and writing flashcards.jsx from "Setup Keywords Feature"
+understand the whole file and write.'
+
+1: Do step 6 from "Steps for Flashcard*" claude conversation latest one.
+2: Decide on whether to use speech synthesis + edge-tts for speech
+feature of flashcard from "Speech synthesis" conversation.
+3: Write down and then see how the styles are affecting button loading 
+, no sidebar required, and make change accordingly.
+
+
+
+
+
+
+- Need to put yake keywords in case model fails
+- Test for big texts bcz currently it's really delicate and allow
+the average good limit within 2 minutes of latency.
+
+Q: Why i used gemini and groq both in the generate.py? 
 
 
 
