@@ -131,7 +131,7 @@ def get_meanings(keywords: list, source_lang: str = "english", original_text: st
 
 
     try:
-        # Get refined meanings from groq 
+        # Get better meanings from groq 
         refined = refine_with_groq(original_text, keywords, source_lang)
 
     except Exception as e:

@@ -281,6 +281,31 @@ feature of flashcard from "Speech synthesis" conversation.
 3: Write down and then see how the styles are affecting button loading 
 , no sidebar required, and make change accordingly.
 
+- solve the speech problem for finnish after writing and testing the whole flashcards feature
+for other languages.
+
+- handleSpeak() now only produces sound for English, modify it after you complete the module
+to work for other languages too. so that the whole picture comes for you to decide what you 
+want and waht you don't 
+
+17th Sep:
+✔: Write the modified return in flashcards.jsx by following Claude "Steps for flashcard*" conversation
+
+✔: Go on writing flashcard page styles from "Steps for Flashcard" from 
+.flashcards .footer.
+✔: Ask Claude to give styles to feedback buttons too.
+✔:: Go on with writing flashcard-preview-styles
+4: Move onto Learn exercise
+
+- Fix pronunciation for flashcards for italian, finnish, spanish etc
+- Add svgs to "Still Learning" and "I knew it" button
+
+21st Sep:
+1: Write the spaced repitition logic for flashcards from "Steps for Flashcards" Feature with comments.
+2: Move onto Learn exercise
+
+- Only after you made all exercises, then create new keywords to test all of them. 
+
 
 
 

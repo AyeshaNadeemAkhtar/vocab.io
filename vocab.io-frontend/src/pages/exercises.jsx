@@ -70,7 +70,7 @@ export default function Exercises() {
                 </button>
 
             </div>
-           <Flashcard />
+           <Flashcard className="flashcards preview" preview={true}/>
            <Learn />
            <Test />
            <Match />
