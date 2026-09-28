@@ -9,7 +9,7 @@ def generate_text(prompt: str, language: str) -> str:
         f"Write your response in {language}. "
         f"Return only the paragraph itself - no title, no preamble, "
         f"no explanation, no quotation marks. "
-        f"Keep it between 80 and 150 characters."
+        f"Keep it between 80 and 250 characters."
     )
 
     if PROVIDER == "gemini":

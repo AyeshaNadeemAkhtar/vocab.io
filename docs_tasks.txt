@@ -1,0 +1,151 @@
+✔: Did External APIs, Evaluation and Traceability Matrix.
+
+23rd Sep:
+✔: Okay Algorithms
+1: Write the functional tests from "Tests for vocab.io" from claude conversation.
+
+24th Sep:
+
+1: Format testcases unit ones
+2: Change the numbering of unit test cases. 
+3: Fix the grammar of the cases .
+4: Finalize the unit test and then move on to functional and integration tests.
+
+✔: Assigned ch # 6 Conversation to Alina
+
+
+
+LOGO:
+=====
+
+1: Discuss with claude about that v a cutting shape logo and decide whether you want it
+from canva
+
+24th Sep:
+2: Figure out does the text need to be part of logo or separate.
+
+2: Do write conclusions given the chance.
+
+3: Write any other topic from the list like Functional Testing and so on.
+
+4: Ask Alina to do some work on github in order to record commits.
+
+26th September:
+
+DOCS tasks:
+============
+
+1: Update Table of Contents 
+    - Add 10 instead of 7 functional requirements.
+    - Add use case 1 in usecase
+    ✔ Add TOC for minimum viable product.
+
+2: Fix the problems in table of contents that sir pointed out previously.
+✔: Gantt Chart *
+4: Fix numbering in functional requirements' headings and update Table
+of Contents
+5: Fix non-functional requirements to be mroe realistic
+6: Fix where the usecase for functional requirement is not provided
+    - where the usecase is duplicated
+    - where it is not named properly
+    - And dash ones which don't match anything.
+7: Fix class diagram *
+8: Fix sequence diagram *
+9: Add new user interface designs in ch # 3
+10: Read and rewrite Algorithms if necessary. *
+11: Metrics of Git Repository *
+12: Fix unit testing numbers 
+13: Do the conversation method in ch # 6
+14: Deployement
+15: Data Conversation
+16: Training
+17: Post Deployement
+18: Challenges
+19: Future work
+20: Conclusion and Summary
+21: References
+22: Appendix A: Use Cases again
+23: Appendix B: Coding Standards
+
+
+
+
+Functional Requirements:                Use Cases
+========================              ==============
+
+1: Sign up                          1: User Registration
+2: Login                            2: User Login with Email and Password
+                                       Sign in with Google
+3: User Profile                     3: Manage Profile
+4: Text Input                       4: Input Text/Generate Text
+5: AI text generation               5: Input Text/Generate Text
+6: Keyword Extraction               6: Extract & Display Keywords
+7: Display Keywords                 7: Extract & Display Keywords
+                                    - Generate & Attempt Exercises
+8: Exercise Feedback Tracking
+9: Lesson Management                9: Manage Lessons
+10: Word Bank                       10: View word bank
+                                    - Track Progress and Streaks
+
+
+Traceability Matrix
+===================
+
+1: User SignUp using email/password 
+2: Login using email/password/Google 
+3: Manage user profile
+4: Input text from user
+5: AI Text Generation from prompt
+6: Extract keywords
+7: Display Keywords
+8: Generate Exercises
+10: Feedback of Exercise
+11: Manage Lessons
+12: Manage word bank
+
+
+Non Functional Requirements
+===========================
+
+1: Security
+2: Cost Efficiency
+3: Usability
+4: Scalability
+5: Performance
+6: Responsiveness
+
+Algorithms
+==========
+
+1: User sign up
+2: User login
+3: User text and AI prompt
+4: Flashcards
+5: MCQs
+6: Translation
+7: Pronunciation
+8: Fill-in-the-blanks
+
+Unit Testing
+============
+
+1: User signup
+2: User Login 
+3: User enter text / User Input
+4: AI generate text
+5: Keyword Extraction using YAKE
+6: Translation
+7: Exercises 
+8: Word Bank
+9: Update user Profile
+10: Invalid Login
+11: Supabase Database
+
+Functional Testing
+==================
+
+Integration Testing
+===================
+
+Performance Testing
+===================

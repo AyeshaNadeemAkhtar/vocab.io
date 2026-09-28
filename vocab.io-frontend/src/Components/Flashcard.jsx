@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { supabase } from "../lib/supabase-client.js"
-import Sidebar from "../Components/sidebar.jsx"
+import { recordFeedback } from "../utils/progress.js"
 
 
 
@@ -14,6 +14,11 @@ export default function Flashcard({ className = "flashcards", preview = false}) 
 
     useEffect(() => {
 
+        if (preview) {
+            setWordBank([{word: "ciao", translation: "hello"}])
+            setLoading(false)
+            return
+        }
         /* useEffect can't be async bcz async returns a promise, however
         useEffect expects a function, so we write a function and then
         calls it */
@@ -43,38 +48,6 @@ export default function Flashcard({ className = "flashcards", preview = false}) 
         loadWords()
     }, [])
 
-    const recordFeedback = async (keywordId, wasCorrect) => {
-        const { data: { user } } = await supabase.auth.getUser()
-
-        /* If the data about a keyword already exists */
-        const { data: existing } = await supabase
-            .from("word_progress")
-            .select("*")
-            .eq("user_id", user.id)
-            .eq("keyword_id", keywordId)
-            .maybeSingle() /* Expect one row or null */
-
-        /* Update the data for existing keyword */
-        if (existing) {
-            await supabase
-                .from("word_progress")
-                /* These are the columns of table, hence dictionary */
-                .update({
-                    correct_count: existing.correct_count + (wasCorrect ? 1 : 0),
-                    incorrect_count: existing.incorrect_count + (wasCorrect ? 0 : 1)
-                })
-                .eq("id", existing.id)
-        } else {
-            /* If it's the first time a keyword is reviewed */
-            await supabase.from("word_progress").insert({
-                user_id: user.id,
-                keyword_id: keywordId,
-                correct_count: wasCorrect ? 1 : 0,
-                incorrect_count: wasCorrect ? 0 : 1,
-                last_reviewed_at: new Date().toISOString()
-            })
-        }
-    }
     
     const handleNext = () => {
         /* Show the word side of card */
@@ -197,8 +170,6 @@ export default function Flashcard({ className = "flashcards", preview = false}) 
     if (preview) return content /* Same content without the styles of wrapper that cause empty space */
     return (
          <div className="flashcard-page">
-            {!preview && <Sidebar />}
-
             {content}
         </div>
     )

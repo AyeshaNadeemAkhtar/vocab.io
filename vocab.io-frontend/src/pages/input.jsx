@@ -1,8 +1,12 @@
 import { useState } from "react"
 import Sidebar from "../Components/sidebar.jsx"
 import { supabase } from "../lib/supabase-client.js"
+import { useNavigate } from "react-router-dom"
+
 
 export default function Input() {
+
+  const navigate = useNavigate()
   /* By Default, 'Input' is the active tab */
   const [activeTab, setActiveTab] = useState('input')
   const [aiStage, setAiStage] = useState('prompt') // 'response'
@@ -79,7 +83,7 @@ export default function Input() {
   
 
   const generateAIText = () => {
-    callApi('/api/generate_text', {prompt: text, language}, (data) => {
+    callApi('/api/generate-text', {prompt: text, language}, (data) => {
       /* This function will be called onSuccess(data) and the text will appear in textarea */
       setText(data.text)
       setAiStage('response')
@@ -172,22 +176,26 @@ export default function Input() {
               {error && <p style={{ color: "red" }}>{error}</p>}
 
               {keywords.length > 0 && (
-                <table className="keywords-table">
-                  <thead>
-                    <tr>
-                      <th>Words</th>
-                      <th>Meanings</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {keywords.map((k, i) => (
-                      <tr key={i}>
-                        <td>{k.word}</td>
-                        <td>{k.meaning}</td>
+                <>
+                  <table className="keywords-table">
+                    <thead>
+                      <tr>
+                        <th>Words</th>
+                        <th>Meanings</th>
                       </tr>
-                    ))}
-                  </tbody>
-                </table>
+                    </thead>
+                    <tbody>
+                      {keywords.map((k, i) => (
+                        <tr key={i}>
+                          <td>{k.word}</td>
+                          <td>{k.meaning}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                  <button className="prompt-button" onClick={() => navigate("/exercises")}>Play Exercises</button>
+                </>
+    
               )}
               
           </div>

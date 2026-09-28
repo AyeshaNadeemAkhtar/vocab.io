@@ -70,14 +70,16 @@ export default function Exercises() {
                 </button>
 
             </div>
-           <Flashcard className="flashcards preview" preview={true}/>
-           <Learn />
-           <Test />
-           <Match />
-           <MCQs />
-           <Pronunciation />
-           <Translation />
-           <FillInTheBlanks />
+
+           <div className="exercise-preview"><Flashcard preview={true} /></div>
+            <div className="exercise-preview"><Learn preview={true} /></div>
+            <div className="exercise-preview"><Test preview={true} /></div>
+            <div className="exercise-preview"><Match preview={true} /></div>
+            <div className="exercise-preview"><MCQs preview={true} /></div>
+            <div className="exercise-preview"><Pronunciation preview={true} /></div>
+            <div className="exercise-preview"><Translation preview={true} /></div>
+            <div className="exercise-preview"><FillInTheBlanks preview={true} /></div>
+           
         </main>
         </div>
     )
