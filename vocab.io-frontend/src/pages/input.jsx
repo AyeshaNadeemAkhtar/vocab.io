@@ -28,10 +28,11 @@ export default function Input() {
     setLoading(true)
 
     try {
-      const response = await fetch(`http://127.0.0.1:5000${endpoint}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}${endpoint}`, {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(body) /* Here prompt, text and language will be passed */
+        body: JSON.stringify(body), /* Here prompt, text and language will be passed */
+        'ngrok-skip-browser-warning': 'true'
       });
 
       const data = await response.json()
