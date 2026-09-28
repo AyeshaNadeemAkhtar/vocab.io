@@ -1360,7 +1360,7 @@ div.container {
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    background-color: transparent;
+    background-color: transparentk;
     padding: 1rem;
     gap: 1rem;
     width: 600px;

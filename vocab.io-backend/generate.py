@@ -29,7 +29,7 @@ def _generate_gemini(full_prompt: str) -> str:
 
 def _generate_groq(full_prompt: str) -> str:
     response = groq_client.chat.completions.create(
-        model="llama-3.3-70b-versatile",
+        model="llama-3.3-70b-versatile", # openai/gpt-oss-20gb
         messages=[{"role": "user", "content": full_prompt}],
         max_tokens=400
     )

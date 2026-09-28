@@ -2,9 +2,6 @@ import { useState, useEffect } from "react"
 import { supabase } from "../lib/supabase-client.js"
 import { recordFeedback } from "../utils/progress.js"
 
-
-
-
 export default function Flashcard({ className = "flashcards", preview = false}) {
 
     const [wordBank, setWordBank] = useState([])
